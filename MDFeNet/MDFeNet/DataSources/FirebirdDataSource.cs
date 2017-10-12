@@ -5,7 +5,10 @@ using System.Text;
 
 namespace MDFeNet.DataSources
 {
-    public class FirebirdDataSource
+    public class FirebirdDataSource : MDFeDataSource
     {
+        public FirebirdDataSource()
+        {
+        }
     }
 }
