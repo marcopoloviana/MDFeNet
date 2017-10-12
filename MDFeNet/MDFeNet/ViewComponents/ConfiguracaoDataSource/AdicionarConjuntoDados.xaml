@@ -1,0 +1,28 @@
+﻿<Window x:Class="MDFeNet.ViewComponents.ConfiguracaoDataSource.AdicionarConjuntoDados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MDFeNet.ViewComponents.ConfiguracaoDataSource"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Title="AdicionarConjuntoDados" Height="595" Width="1007.692">
+
+    <Grid Background="Gray">
+        <Grid x:Name="GridTitulo" MouseDown="GridTitulo_MouseDown" Background="White" Margin="1">
+            <Image x:Name="image" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="39" Source="/MDFeNet;component/Img/cube.png" Margin="10,4,0,0"/>
+            <Label x:Name="label" Content="Configurar fonte de dados" HorizontalAlignment="Left" Margin="54,0,0,0" VerticalAlignment="Top" Width="255" FontFamily="Segoe UI Semibold" FontSize="20"/>
+            
+            <!-- *** CONTAINER *** -->
+            <Grid Margin="0,37,0,46" x:Name="GridContainer" Background="#FFF7F7F7"/>
+            
+            <Button x:Name="button" Content="_Avançar" Style="{StaticResource BtnConfirm}" HorizontalAlignment="Right" Margin="0,0,222,10" VerticalAlignment="Bottom" Width="84" Height="26" />
+            <Button x:Name="button_Copy" Content="_Cancelar" Style="{StaticResource BtnNormal}" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="84" Height="26" />
+            <Button x:Name="button_Copy1" Content="An_terior" Style="{StaticResource BtnNormal}" HorizontalAlignment="Right" Margin="0,0,311,10" VerticalAlignment="Bottom" Width="84" Height="26" />
+            <Border BorderBrush="#FFA2A2A2" BorderThickness="1" Height="1" Margin="0,0,0,45" VerticalAlignment="Bottom"/>
+            <Button x:Name="button_Copy2" IsEnabled="False" Content="_Salvar" Style="{StaticResource BtnConfirm}" HorizontalAlignment="Right" Margin="0,0,133,10" VerticalAlignment="Bottom" Width="84" Height="26" />
+        </Grid>
+    </Grid>
+</Window>

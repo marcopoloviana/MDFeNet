@@ -6,6 +6,7 @@ using System.Text;
 
 namespace MDFeNet.DataSources
 {
+    [Serializable]
     public abstract class MDFeDataSource
     {
         public List<Motorista> Motoristas { get; set; }
