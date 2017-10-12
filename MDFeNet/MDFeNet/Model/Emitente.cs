@@ -21,10 +21,11 @@ namespace MDFeNet.Model
         public string fone { get; set; }
         public string email { get; set; }
 
-    }
+        public string GetStatement()
+        {
+            return null;
+        }
 
-    public string GetStatement()
-    {
-        return null;
     }
+    
 }
