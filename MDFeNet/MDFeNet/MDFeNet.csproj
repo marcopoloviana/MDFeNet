@@ -102,6 +102,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Emitente.cs" />
+    <Compile Include="Model\IdeMdfe.cs" />
     <Compile Include="Model\Motorista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
