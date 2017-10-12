@@ -26,6 +26,8 @@ namespace MDFeNet.Model
         public string infMunCarrega { get; set; }
         public string infPercurso { get; set; }
         public string dhIniViagem { get; set; }
+        public string cMunCarrega { get; set; }
+        public string xMunCarrega { get; set; }
 
         public string GetStatement()
         {
