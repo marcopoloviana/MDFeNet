@@ -5,10 +5,9 @@ using System.Text;
 
 namespace MDFeNet.Model
 {
-    public class Motorista
+    public class InformacoesAdicionais
     {
-        public string xNome { get; set; }
-        public string cpf { get; set; }
+        public string infCpl { get; set; }
 
         public string GetStatement()
         {

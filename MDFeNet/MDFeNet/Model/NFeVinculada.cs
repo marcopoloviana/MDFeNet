@@ -5,10 +5,11 @@ using System.Text;
 
 namespace MDFeNet.Model
 {
-    public class Motorista
+    public class NFeVinculada
     {
-        public string xNome { get; set; }
-        public string cpf { get; set; }
+        public string chNfe { get; set; }
+        public string indReentrega { get; set; }
+
 
         public string GetStatement()
         {

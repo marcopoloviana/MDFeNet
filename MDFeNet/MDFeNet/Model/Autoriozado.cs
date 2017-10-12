@@ -5,10 +5,11 @@ using System.Text;
 
 namespace MDFeNet.Model
 {
-    public class Motorista
+    public class Autoriozado
     {
-        public string xNome { get; set; }
+        public string cnpj { get; set; }
         public string cpf { get; set; }
+
 
         public string GetStatement()
         {

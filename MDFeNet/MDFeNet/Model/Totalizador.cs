@@ -5,10 +5,13 @@ using System.Text;
 
 namespace MDFeNet.Model
 {
-    public class Motorista
+    public class Totalizador
     {
-        public string xNome { get; set; }
-        public string cpf { get; set; }
+        public qNFe tara { get; set; }
+        public decimal vCarga { get; set; }
+        public string cUnid { get; set; }
+        public decimal qCarga { get; set; }
+
 
         public string GetStatement()
         {
