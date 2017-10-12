@@ -29,6 +29,7 @@ namespace MDFeNet.Model
         public string cMunCarrega { get; set; }
         public string xMunCarrega { get; set; }
 
+
         public string GetStatement()
         {
             return null;
