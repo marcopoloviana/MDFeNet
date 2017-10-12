@@ -105,6 +105,7 @@
     <Compile Include="Model\Emitente.cs" />
     <Compile Include="Model\IdeMdfe.cs" />
     <Compile Include="Model\Motorista.cs" />
+    <Compile Include="Model\NFeVinculada.cs" />
     <Compile Include="Model\Percurso.cs" />
     <Compile Include="Model\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
