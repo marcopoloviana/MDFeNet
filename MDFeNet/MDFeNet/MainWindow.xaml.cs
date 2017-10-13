@@ -1,4 +1,5 @@
 ﻿using MDFeNet.DataSources;
+using MDFeNet.ViewComponents.ConfiguracaoDataSource;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,18 @@ namespace MDFeNet
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            AdicionarConjuntoDados acd = new AdicionarConjuntoDados();
+            acd.ShowDialog();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            string sql = @"SELECT CNPJ, RAZAO_SOCIAL, NOME_FANTASIA, FROM LOJAS";
+            MDFeNetConfig.WriteStatementForModel("Emitente", sql);
         }
     }
 }

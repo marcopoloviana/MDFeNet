@@ -7,7 +7,7 @@ namespace MDFeNet.Model
 {
     public class Totalizador
     {
-        public qNFe tara { get; set; }
+        public decimal qNFe { get; set; }
         public decimal vCarga { get; set; }
         public string cUnid { get; set; }
         public decimal qCarga { get; set; }
