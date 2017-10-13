@@ -9,9 +9,10 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         Title="TextMessageBox" Height="166.282" Width="346.5">
-    <Grid Background="#FFFDFDFD">
-        <TextBlock x:Name="textBlock" Margin="10,10,10,44" TextWrapping="Wrap"><Run Text="dijsakdjjjjjjjjjjjjjjjjjjjjjjjjjjsajdmlkasmldkasndlkasndlakndlkandlkandlkandlkandlkandlkandlkandlk"/></TextBlock>
-        <Button x:Name="button" Style="{StaticResource BtnConfirm}" Content="OK" Margin="0,0,10,10" HorizontalAlignment="Right" Width="75" Height="24" VerticalAlignment="Bottom" Click="button_Click"/>
-
+    <Grid Background="Gray">
+        <Grid Margin="1" Background="#FFFDFDFD">
+            <TextBlock x:Name="textBlock" Margin="10,10,10,44" TextWrapping="Wrap"><Run Text="dijsakdjjjjjjjjjjjjjjjjjjjjjjjjjjsajdmlkasmldkasndlkasndlakndlkandlkandlkandlkandlkandlkandlkandlk"/></TextBlock>
+            <Button x:Name="button" Style="{StaticResource BtnConfirm}" Content="OK" Margin="0,0,10,10" HorizontalAlignment="Right" Width="75" Height="24" VerticalAlignment="Bottom" Click="button_Click"/>
+        </Grid>
     </Grid>
 </Window>

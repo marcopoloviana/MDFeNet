@@ -19,19 +19,39 @@ namespace MDFeNet.ViewComponents.ConfiguracaoDataSource
     /// <summary>
     /// Interação lógica para ConfigurarConexaoBanco.xam
     /// </summary>
-    public partial class ConfigurarConexaoBanco : UserControl
+    public partial class ConfigurarConexaoBanco : UserControl, ISetupScreen
     {
+        public UserControl CurrentControl
+        {
+            get
+            {
+                return this;
+            }
+        }
+
         public ConfigurarConexaoBanco()
         {
             InitializeComponent();
 
             FillCbTypes();
+            FillFromLocal();
+        }
+
+        private void FillFromLocal()
+        {
+            DatasourceConfiguration conf = MDFeNetConfig.ReadFromLocal();
+            cbTipoBanco.SelectedValue = conf.DataProvider;
+            txServidor.Text = conf.Datasource;
+            txUsuario.Text = conf.UserId;
+            txSenha.Password = conf.Password;
+            txNomeBanco.Text = conf.InitialCatalog;
         }
 
         private void FillCbTypes()
         {
             List<KeyValuePair<DatasourceConfiguration.Provider, string>> dbs = new List<KeyValuePair<DatasourceConfiguration.Provider, string>>();
             dbs.Add(new KeyValuePair<DatasourceConfiguration.Provider, string>(DatasourceConfiguration.Provider.Firebird, "Firebird SQL"));
+            dbs.Add(new KeyValuePair<DatasourceConfiguration.Provider, string>(DatasourceConfiguration.Provider.MS_SQL, "MS SQL"));
 
             cbTipoBanco.ItemsSource = dbs;
             cbTipoBanco.DisplayMemberPath = "Value";
@@ -52,7 +72,7 @@ namespace MDFeNet.ViewComponents.ConfiguracaoDataSource
             }
         }
 
-        private void Testar()
+        private DatasourceConfiguration GetConfig()
         {
             DatasourceConfiguration conf = new DatasourceConfiguration();
             conf.DataProvider = (DatasourceConfiguration.Provider)cbTipoBanco.SelectedValue;
@@ -66,10 +86,21 @@ namespace MDFeNet.ViewComponents.ConfiguracaoDataSource
             conf.Password = txSenha.Password;
             conf.InitialCatalog = txNomeBanco.Text;
 
+            return conf;
+        }
+
+        private void Testar()
+        {
+            DatasourceConfiguration conf = GetConfig();
             conf.TestConnection();
         }
 
-        public bool Valid()
+        public void Save()
+        {
+            MDFeNetConfig.SaveToLocal(GetConfig());
+        }
+
+        public bool IsValid()
         {
             try
             {

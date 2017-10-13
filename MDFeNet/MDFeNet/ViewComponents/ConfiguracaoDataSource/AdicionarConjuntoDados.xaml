@@ -18,11 +18,11 @@
             <!-- *** CONTAINER *** -->
             <Grid Margin="0,37,0,46" x:Name="GridContainer" Background="#FFF7F7F7"/>
             
-            <Button x:Name="button" Content="_Avançar" Style="{StaticResource BtnConfirm}" HorizontalAlignment="Right" Margin="0,0,222,10" VerticalAlignment="Bottom" Width="84" Height="26" />
+            <Button x:Name="btAvancar" Content="_Próximo" Style="{StaticResource BtnConfirm}" HorizontalAlignment="Right" Margin="0,0,222,10" VerticalAlignment="Bottom" Width="84" Height="26" Click="btAvancar_Click" />
             <Button x:Name="button_Copy" Content="_Cancelar" Style="{StaticResource BtnNormal}" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="84" Height="26" />
-            <Button x:Name="button_Copy1" Content="An_terior" Style="{StaticResource BtnNormal}" HorizontalAlignment="Right" Margin="0,0,311,10" VerticalAlignment="Bottom" Width="84" Height="26" />
+            <Button x:Name="btAnterior" Content="An_terior" Style="{StaticResource BtnNormal}" HorizontalAlignment="Right" Margin="0,0,311,10" VerticalAlignment="Bottom" Width="84" Height="26" Click="btAnterior_Click" />
             <Border BorderBrush="#FFA2A2A2" BorderThickness="1" Height="1" Margin="0,0,0,45" VerticalAlignment="Bottom"/>
-            <Button x:Name="button_Copy2" IsEnabled="False" Content="_Salvar" Style="{StaticResource BtnConfirm}" HorizontalAlignment="Right" Margin="0,0,133,10" VerticalAlignment="Bottom" Width="84" Height="26" />
+            <Button x:Name="btSalvar" IsEnabled="False" Content="Concluir" Style="{StaticResource BtnConfirm}" HorizontalAlignment="Right" Margin="0,0,133,10" VerticalAlignment="Bottom" Width="84" Height="26" Click="btSalvar_Click" />
         </Grid>
     </Grid>
 </Window>

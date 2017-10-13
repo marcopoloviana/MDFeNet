@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -30,7 +31,35 @@ namespace MDFeNet.DataSources
                 case Provider.Firebird:
                     new FirebirdDataSource(this);
                     break;
+
+                case Provider.MS_SQL:
+                    new SqlDataSource(this);
+                    break;
             }
+        }
+
+        public DataTable RetrieveDataFromSql(string sql)
+        {
+            if (!sql.ToLower().StartsWith("select"))
+                throw new Exception("Operações diferentes de SELECT não são permitidas");
+
+            MDFeDataSource ds = null;
+            switch (DataProvider)
+            {
+                case Provider.Firebird:
+                    ds = new FirebirdDataSource();
+                    break;
+
+                case Provider.MS_SQL:
+                    ds = new SqlDataSource();
+                    break;
+            }
+
+            ds.SetupConnection(this);
+            DataTable dt = ds.RetrieveDataFromSQL(sql);
+            ds.CloseConnection();
+
+            return dt;
         }
     }
 }

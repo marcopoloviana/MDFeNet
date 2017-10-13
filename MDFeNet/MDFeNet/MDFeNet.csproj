@@ -86,12 +86,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataSources\SqlDataSource.cs" />
     <Compile Include="ViewComponents\ConfiguracaoDataSource\AdicionarConjuntoDados.xaml.cs">
       <DependentUpon>AdicionarConjuntoDados.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewComponents\ConfiguracaoDataSource\ConfigurarConexaoBanco.xaml.cs">
       <DependentUpon>ConfigurarConexaoBanco.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewComponents\ConfiguracaoDataSource\ConfigurarStatements.xaml.cs">
+      <DependentUpon>ConfigurarStatements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComponents\ConfiguracaoDataSource\ISetupScreen.cs" />
     <Compile Include="ViewComponents\Messages\MsgBox.cs" />
     <Compile Include="ViewComponents\Messages\TextMessageBox.xaml.cs">
       <DependentUpon>TextMessageBox.xaml</DependentUpon>
@@ -117,6 +122,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewComponents\ConfiguracaoDataSource\ConfigurarConexaoBanco.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewComponents\ConfiguracaoDataSource\ConfigurarStatements.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,7 +173,11 @@
   <ItemGroup>
     <Resource Include="Img\cube.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Statements\file.mds">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

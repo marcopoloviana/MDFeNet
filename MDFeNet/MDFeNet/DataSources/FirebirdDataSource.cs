@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace MDFeNet.DataSources
 {
@@ -13,15 +14,16 @@ namespace MDFeNet.DataSources
 
         public FirebirdDataSource(DatasourceConfiguration configurationToTest = null)
         {
-            SetupConnection(configurationToTest == null
-                ? MDFeNetConfig.GetLocalConfiguration()
-                : configurationToTest);
+            if (configurationToTest != null)
+            {
+                SetupConnection(configurationToTest);
 
-            if (Connection != null)
-                CloseConnection();
+                if (Connection != null)
+                    CloseConnection();
+            }
         }
 
-        public void CloseConnection()
+        public override void CloseConnection()
         {
             try
             {
@@ -34,7 +36,7 @@ namespace MDFeNet.DataSources
             }
         }
 
-        public void SetupConnection(DatasourceConfiguration config)
+        public override void SetupConnection(DatasourceConfiguration config)
         {
             try
             {
@@ -54,6 +56,24 @@ namespace MDFeNet.DataSources
             catch (Exception ex)
             {
                 throw;
+            }
+        }
+
+        public override DataTable RetrieveDataFromSQL(string sql)
+        {
+            try
+            {
+                FbCommand cmd = new FbCommand(sql, Connection);
+                FbDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+
+                return dt;
+            }
+            catch
+            {
+                return null;
             }
         }
     }

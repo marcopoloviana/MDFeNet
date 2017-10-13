@@ -32,5 +32,11 @@ namespace MDFeNet
             AdicionarConjuntoDados acd = new AdicionarConjuntoDados();
             acd.ShowDialog();
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            string sql = @"SELECT CNPJ, RAZAO_SOCIAL, NOME_FANTASIA, FROM LOJAS";
+            MDFeNetConfig.WriteStatementForModel("Emitente", sql);
+        }
     }
 }
